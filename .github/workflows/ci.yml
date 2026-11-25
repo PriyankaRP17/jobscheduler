@@ -2,7 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [main, feature/week-2, feature/week-3, feature/week-4, feature/week-5]
+    branches:
+      - main
+      - feature/week-2
+      - feature/week-3
+      - feature/week-4
+      - feature/week-5
   pull_request:
     branches: [main]
 
@@ -38,12 +43,7 @@ jobs:
       - name: Unit tests
         run: |
           go test ./internal/... ./pkg/... \
-            -v -count=1 -timeout 60s \
-            -coverprofile=coverage.out \
-            -covermode=atomic
-
-      - name: Show coverage
-        run: go tool cover -func=coverage.out | grep total
+            -v -count=1 -timeout 60s
 
       - name: Build API and Worker
         run: |

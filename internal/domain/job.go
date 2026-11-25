@@ -42,17 +42,17 @@ type RetryPolicy struct {
 
 // Job is the core entity: a definition of work plus its schedule.
 type Job struct {
-	ID        string            `bson:"_id" json:"id"`
-	OwnerID   string            `bson:"owner_id" json:"owner_id"`
-	Name      string            `bson:"name" json:"name"`
-	Type      string            `bson:"type" json:"type"` // "http_webhook"
-	Payload   map[string]any    `bson:"payload" json:"payload"`
-	Schedule  Schedule          `bson:"schedule" json:"schedule"`
-	Policy    RetryPolicy       `bson:"policy" json:"policy"`
-	Status    JobStatus         `bson:"status" json:"status"`
-	NextRunAt *time.Time        `bson:"next_run_at,omitempty" json:"next_run_at,omitempty"`
-	CreatedAt time.Time         `bson:"created_at" json:"created_at"`
-	UpdatedAt time.Time         `bson:"updated_at" json:"updated_at"`
+	ID        string         `bson:"_id" json:"id"`
+	OwnerID   string         `bson:"owner_id" json:"owner_id"`
+	Name      string         `bson:"name" json:"name"`
+	Type      string         `bson:"type" json:"type"` // "http_webhook"
+	Payload   map[string]any `bson:"payload" json:"payload"`
+	Schedule  Schedule       `bson:"schedule" json:"schedule"`
+	Policy    RetryPolicy    `bson:"policy" json:"policy"`
+	Status    JobStatus      `bson:"status" json:"status"`
+	NextRunAt *time.Time     `bson:"next_run_at,omitempty" json:"next_run_at,omitempty"`
+	CreatedAt time.Time      `bson:"created_at" json:"created_at"`
+	UpdatedAt time.Time      `bson:"updated_at" json:"updated_at"`
 }
 
 // Validate checks the job fields before saving.

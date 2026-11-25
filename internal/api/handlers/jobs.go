@@ -22,10 +22,10 @@ func NewJobHandler(svc *service.JobService) *JobHandler {
 
 // createJobRequest is the JSON body for POST /jobs.
 type createJobRequest struct {
-	Name     string            `json:"name"`
-	Type     string            `json:"type"`
-	Payload  map[string]any    `json:"payload"`
-	Schedule domain.Schedule   `json:"schedule"`
+	Name     string             `json:"name"`
+	Type     string             `json:"type"`
+	Payload  map[string]any     `json:"payload"`
+	Schedule domain.Schedule    `json:"schedule"`
 	Policy   domain.RetryPolicy `json:"policy"`
 }
 

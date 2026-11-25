@@ -36,12 +36,12 @@ func (r *runRepo) GetByID(ctx context.Context, id, ownerID string) (*domain.Run,
 }
 
 func (r *runRepo) GetByIDOnly(ctx context.Context, id string) (*domain.Run, error) {
-    var run domain.Run
-    err := r.col.FindOne(ctx, bson.M{"_id": id}).Decode(&run)
-    if errors.Is(err, mongo.ErrNoDocuments) {
-        return nil, nil
-    }
-    return &run, err
+	var run domain.Run
+	err := r.col.FindOne(ctx, bson.M{"_id": id}).Decode(&run)
+	if errors.Is(err, mongo.ErrNoDocuments) {
+		return nil, nil
+	}
+	return &run, err
 }
 
 func (r *runRepo) List(ctx context.Context, f repository.ListRunsFilter) ([]*domain.Run, string, error) {
@@ -138,7 +138,7 @@ func (r *runRepo) MarkRetrying(ctx context.Context, runID string, attempt int, l
 func (r *runRepo) FindStuckQueued(ctx context.Context, olderThan time.Duration) ([]*domain.Run, error) {
 	threshold := time.Now().UTC().Add(-olderThan)
 	filter := bson.M{
-		"state":        domain.RunStateQueued,
+		"state":         domain.RunStateQueued,
 		"scheduled_for": bson.M{"$lt": threshold},
 	}
 	cur, err := r.col.Find(ctx, filter, options.Find().SetLimit(100))

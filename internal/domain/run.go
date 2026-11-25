@@ -13,8 +13,8 @@ const (
 	RunStateRunning   RunState = "running"
 	RunStateSucceeded RunState = "succeeded"
 	RunStateRetrying  RunState = "retrying"
-	RunStateFailed    RunState = "failed"    // worker lost / reaper
-	RunStateDead      RunState = "dead"      // retries exhausted
+	RunStateFailed    RunState = "failed" // worker lost / reaper
+	RunStateDead      RunState = "dead"   // retries exhausted
 )
 
 // AttemptLog records one attempt within a run.

@@ -22,7 +22,7 @@ func NewConsumer(js jetstream.JetStream, ackWait time.Duration) (*Consumer, erro
 		FilterSubject: SubjectRunAll,
 		AckPolicy:     jetstream.AckExplicitPolicy,
 		AckWait:       ackWait,
-		MaxDeliver:    15, // safety cap; per-job limit enforced by worker
+		MaxDeliver:    15,  // safety cap; per-job limit enforced by worker
 		BackOff:       nil, // worker controls backoff via NakWithDelay
 		MaxAckPending: 50,  // backpressure: max in-flight across all workers
 	}

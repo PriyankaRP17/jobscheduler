@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
+	"github.com/nats-io/nats.go/jetstream"
 	"github.com/yourname/jobscheduler/internal/domain"
 	"github.com/yourname/jobscheduler/internal/queue"
 	"github.com/yourname/jobscheduler/internal/repository"
 	"github.com/yourname/jobscheduler/pkg/backoff"
-	"github.com/nats-io/nats.go/jetstream"
 )
 
 const (

@@ -8,9 +8,9 @@ import (
 
 // Config controls exponential backoff with jitter.
 type Config struct {
-	Base    time.Duration // initial delay (e.g. 2s)
-	Cap     time.Duration // maximum delay (e.g. 5m)
-	Jitter  float64       // fraction of delay added randomly (0.0-1.0)
+	Base   time.Duration // initial delay (e.g. 2s)
+	Cap    time.Duration // maximum delay (e.g. 5m)
+	Jitter float64       // fraction of delay added randomly (0.0-1.0)
 }
 
 // DefaultConfig is the production backoff used by workers.

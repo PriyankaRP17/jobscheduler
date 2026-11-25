@@ -9,13 +9,13 @@ import (
 )
 
 type Config struct {
-	HTTPPort    string
-	MongoURI    string
-	MongoDB     string
-	NatsURL     string
-	JWTSecret   string
-	WorkerID    string
-	LogLevel    string
+	HTTPPort  string
+	MongoURI  string
+	MongoDB   string
+	NatsURL   string
+	JWTSecret string
+	WorkerID  string
+	LogLevel  string
 }
 
 func Load() *Config {
